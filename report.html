@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>剂量评估</title>
+    <link rel="stylesheet" href="css/main-set.min.css">
+    <link rel="stylesheet" href="css/easyui.css">
+    <link rel="stylesheet" href="css/colpick.css">
+</head>
+
+<body>
+    <div id="main">
+        <!-- 主标题 -->
+        <div id="main-title"></div>
+        <!-- 折线图区域 -->
+        <div id="main-container">
+            <!-- 折线图1 -->
+            <div id="main-bar-first">
+            </div>
+            <!-- 折线图2 -->
+            <div id="main-bar-second">
+            </div>
+            <!-- 折线图3 -->
+            <div id="main-bar-third">
+            </div>
+
+            <!-- 图1设置面板 -->
+            <div class="popup box" id="popup-container">
+                <div class="title">
+                    <span>操作面板设置</span>
+                    <img src="images/close_about.png" alt="关闭" class="close">
+                </div>
+                <!-- 颜色面板容器 -->
+                <div class="set-container">
+                    <!-- 图一调色面板 -->
+                    <div id="color-div-first">
+                    </div>
+                    <!-- 图二调色面板 -->
+                    <div id="color-div-second">
+                    </div>
+                    <!-- 图三调色面板 -->
+                    <div id="color-div-third">
+                    </div>
+                    <!-- 设置线条宽度 -->
+                    <!-- 图一 -->
+                    <div id="dialog-width">曲线线宽:
+                        <input type="number" name="曲线线宽" id="change-dialog-width-first" placeholder="请输入数字"
+                            oninput="if(value>10)value=10;if(value<0)value=0">
+                        <input type="number" name="曲线线宽" id="change-dialog-width-second" placeholder="请输入数字"
+                            oninput="if(value>10)value=10;if(value<0)value=0">
+                        <input type="number" name="曲线线宽" id="change-dialog-width-third" placeholder="请输入数字"
+                            oninput="if(value>10)value=10;if(value<0)value=0">
+                    </div>
+                    <!-- 设置线条线型 -->
+                    <div id="icon-line">
+                        <input id="icon" class="easyui-combobox" data-options="
+                            showItemIcon: true,
+                            data: [
+                                {value:'实线',text:'实线',iconCls:'icon-line-solid'},
+                                {value:'虚线',text:'虚线',iconCls:'icon-line-dashed'},
+                                {value:'点划线',text:'点划线',iconCls:'icon-line-dotted'}
+                            ],
+                            editable: false,
+                            panelHeight: 'auto', 
+                            label: '曲线类型:',
+                            labelPosition: 'right',
+                            ">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/echarts.js"></script>
+    <script src="js/jquery.easyui.min.js"></script>
+    <script src="js/colpick.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/drag.js"></script>
+</body>
+
+</html>
